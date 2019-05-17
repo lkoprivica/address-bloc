@@ -18,7 +18,7 @@ describe("ContactController", () => {
   });
 });
 
-describe("#addContact()", () => {
+describe("addContact()", () => {
 
      it("should add a single contact into the book", (done) => {
        this.book.addContact("Alice", "001-101-1010")
@@ -32,3 +32,16 @@ describe("#addContact()", () => {
         });
      });
    });
+
+describe("addColumn()" ,() => {
+  it("should have email present on returned contat object" ,(done) => {
+    this.book.addColumn("myemail@myemail.com")
+    .then((contact) => {
+      expect(contact.email).toBe("myemail@myemail.com");
+      done();
+    })
+    .catch((err) => {
+      done()
+    })
+  })
+})

@@ -53,6 +53,18 @@ module.exports = class MenuController {
      });
   }
 
+  addColumn(){
+    this.clear();
+    inquirer.prompt(this.book.addContactQuestions). then((answers) => {
+      this.book.addColumn(answers.email).then((contact) => {
+        console.log("Email addedd successfully");
+        this.main()
+      }).catch((err) => {
+        this.main();
+      });
+    });
+  }
+
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit();
