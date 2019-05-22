@@ -41,7 +41,7 @@ module.exports = class ContactController {
      return Contact.findAll()
   }
 
-  addColumn(email){
+  /*addColumn(email){
     return Contact.create({email})
-  }
+  } */
 }

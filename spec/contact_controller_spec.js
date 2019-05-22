@@ -16,7 +16,7 @@ describe("ContactController", () => {
   it("should be defined", () =>{
     expect(ContactController).toBeDefined();
   });
-});
+
 
 describe("#addContact()", () => {
 
@@ -33,7 +33,7 @@ describe("#addContact()", () => {
      });
    });
 
-describe("#addColumn()" ,() => {
+/*describe("#addColumn()" ,() => {
   it("should have email present on returned contat object" ,(done) => {
     this.book.addColumn("myemail@myemail.com")
     .then((contact) => {
@@ -44,7 +44,7 @@ describe("#addColumn()" ,() => {
       done()
     })
   })
-})
+})*/
 
 describe("#getContacts()", () => {
 
@@ -75,4 +75,5 @@ describe("#getContacts()", () => {
         });
       });
 
+    });
     });
