@@ -41,7 +41,42 @@ module.exports = class ContactController {
      return Contact.findAll()
   }
 
-  /*addColumn(email){
-    return Contact.create({email})
-  } */
+  iterativeSearch(contacts, target){
+    for(let contact of contacts){
+      if(contact.name.toLowerCase()=== target.toLowerase()){
+        return contact;
+      }
+    }
+    return null;
+  }
+
+  binarySearch(contacts, target){
+      let min = 0;
+      let max = contacts.length - 1;
+      let mid;
+
+      while(min <= max) {
+
+
+        mid = Math.floor((min + max) / 2);
+        let currentContact = contacts[mid];
+
+
+        if(currentContact.name > target){
+          max = mid - 1;
+        } else if(currentContact.name < target){
+          min = mid - 1;
+        } else {
+          return contacts[mid];
+        }
+      }
+
+      return null;
+    }
+    
+    search(name){
+      return Contact.findOne({
+        where: {name}
+      });
+    }
 }

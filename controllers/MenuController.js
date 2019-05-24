@@ -62,6 +62,7 @@ module.exports = class MenuController {
       this.clear();
 
       this.book.getContacts().then((contacts) => {
+        console.log(JSON.stringify(contacts));
         for (let contact of contacts) {
           console.log(`
           name: ${contact.name}
